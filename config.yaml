@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 10
+  start_block: 0
+  contracts:
+  - name: StakingRewardDistributor
+    address:
+    - 0x7a0D71eC2a7B81bfae1c38dC05B890518b4bc038
+    - 0xF368F535e329c6d08DFf0d4b2dA961C4e7F3fCAF
+    handler: src/EventHandlers.ts
+    events:
+    - event: Fed(uint256 amount)
+    - event: Initialized(uint64 version)
+    - event: Killed()
+    - event: OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: RecipientUpdated(address indexed user, address indexed oldRecipient, address indexed newRecipient)
+    - event: RewardsClaimed(address indexed user, address indexed recipient, uint256 amount, uint256 claimEpoch, uint256 maxEpoch)
+    - event: TokenCheckpointed(uint256 timestamp, uint256 tokens)
+rollback_on_reorg: false

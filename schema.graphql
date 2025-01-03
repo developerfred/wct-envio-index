@@ -1,0 +1,48 @@
+type StakingRewardDistributor_Fed {
+  id: ID!
+  amount: BigInt!
+}
+
+type StakingRewardDistributor_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type StakingRewardDistributor_Killed {
+  id: ID!
+}
+
+type StakingRewardDistributor_OwnershipTransferStarted {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type StakingRewardDistributor_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type StakingRewardDistributor_RecipientUpdated {
+  id: ID!
+  user: String!
+  oldRecipient: String!
+  newRecipient: String!
+}
+
+type StakingRewardDistributor_RewardsClaimed {
+  id: ID!
+  user: String!
+  recipient: String!
+  amount: BigInt!
+  claimEpoch: BigInt!
+  maxEpoch: BigInt!
+}
+
+type StakingRewardDistributor_TokenCheckpointed {
+  id: ID!
+  timestamp: BigInt!
+  tokens: BigInt!
+}
+
