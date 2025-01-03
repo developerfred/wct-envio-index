@@ -2,7 +2,7 @@
 name: envio-indexer
 networks:
 - id: 10
-  start_block: 0
+  start_block: 128387339
   contracts:
   - name: StakingRewardDistributor
     address:
